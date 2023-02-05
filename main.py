@@ -19,9 +19,9 @@ app = Flask(__name__)
 
 
 
-app.config['SECRET_KEY'] = 'martinez'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 Bootstrap(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users-data.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK-MODIFICATIONS'] = False
 db= SQLAlchemy(app)
 gravatar = Gravatar( app,\
