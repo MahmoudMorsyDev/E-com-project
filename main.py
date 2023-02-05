@@ -1,4 +1,4 @@
-import requests
+import dotenv
 from flask import Flask,jsonify, render_template,redirect, url_for, request, flash, abort
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -12,8 +12,9 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from flask_gravatar import Gravatar
 from functools import wraps
 import stripe
+import os
 
-
+dotenv.load_dotenv()
 app = Flask(__name__)
 
 
@@ -285,27 +286,6 @@ def check_out():
     )
 
     return redirect(session.url, code=303)
-my_lat =50.450100
-my_long =30.523399
-weather_api_key = '17eecfc3aef4ad08607387d9c9ec1c8d'
-parameters = {
-    'lat':my_lat,
-    'lon':my_long,
-    'appid':weather_api_key,
-    'units':'metric',
-    'lang': 'ar'
-
-
-}
-@app.route('/weather')
-def the_weather():
-    response = requests.get('https://api.openweathermap.org/data/2.5/weather?', params = parameters)
-    response.raise_for_status()
-    weather_data = response.json()
-    print(weather_data['main']['temp'])
-
-
-    return render_template('weather.html')
 
 
 
