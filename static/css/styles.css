@@ -1,0 +1,121 @@
+.upper-nav{
+height: 150px;
+background-color: #b0aac0;
+}
+.navbar-custom .navbar-brand{
+color: white;
+font-size: 3rem;
+}
+
+.navbar-custom .navbar-collapse{
+font-size: 1.7rem;
+text-decoration: none;
+margin: 2% 4%;
+
+}
+
+.navbar-custom .navbar-collapse .nav-link{
+color: black;
+}
+
+.first-logo-stuff{
+text-align: center;
+
+}
+.first-logo-stuff img{
+    width:35rem;
+    height: 35rem;
+    object-fit: cover;
+    object-position: top;
+    border: 5px solid white;
+    border-radius: 12px;
+    background-color: #ffe1bf;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    margin: 2% 2%;
+
+}
+.carousel {
+interval: 500;
+}
+.middle-section{
+text-align: center;
+}
+.middle-section p {
+font-size: 2rem;
+
+}
+.reg-form{
+width: 30%;
+margin: 4% auto;
+font-size: 1.7rem;
+}
+.reg-intro{
+text-align: center;
+}
+.log-intro{
+text-align: center;
+}
+.log-form{
+width: 30%;
+margin: 4% auto;
+font-size: 1.7rem;
+}
+.add-form{
+width: 30%;
+margin: 4% auto;
+font-size: 1.7rem;
+}
+.single-item{
+font-size: 2rem;
+text-align: center;
+}
+.item-image{
+    width: 250px;
+    object-fit: cover;
+    object-position: top;
+    border: 5px solid white;
+    border-radius: 12px;
+    background-color: #ffe1bf;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+}
+.add-button{
+width: 10%;
+height: 10%;
+
+ border-radius: 10px;
+}
+.btn-link{
+ font-size: 1.5rem;
+ text-decoration: none;
+ color: white;
+}
+.btn-link:hover{
+color: white;
+text-decoration:none;
+}
+.cart-items{
+
+padding-bottom: 10px;
+font-size: 1.5rem;
+text-align: center;
+width: 50%;
+}
+.cart-items img{
+    width: 15%;
+    object-fit: cover;
+    object-position: top;
+    border: 5px solid white;
+    border-radius: 12px;
+    background-color: #ffe1bf;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.bottom-cart{
+
+font-size: 1.5rem;
+text-align: center;
+width: 50%;
+}
+.btn-search{
+    text-align: center;
+}

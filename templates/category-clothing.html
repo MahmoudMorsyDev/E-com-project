@@ -1,0 +1,40 @@
+{% extends 'bootstrap/base.html' %}
+{% block content %}
+{% include "header.html" %}
+
+<head>
+    <title>{% block title%}{{ choice }}{% endblock %}</title>
+<body>
+    <div class="container single-item">
+        {% for product in products %}
+             <img class="item-image" src= "{{ product.product_img }}">
+        <ul>
+            <li>
+                Name: {{ product.product_name }}
+                <br>
+                Description: {{ product.product_description }}
+                <br>
+                Price: {{ product.product_price }}$
+            </li>
+        </ul>
+        {% if logged_in and current_user != admin %}
+         <button type="button" class="btn btn-primary add-button"><a class="btn btn-primary btn-link" href="{{url_for('add_to_cart', id = product.id) }}" role="button">Add to Cart</a></button>
+        <hr>
+        {% elif logged_in and current_user == admin %}
+        <button type="button" class="btn btn-primary add-button"><a class="btn btn-primary btn-link" href="{{url_for ('edit_product', id=product.id)}}" role="button">Edit Item</a></button>
+        <button type="button" class="btn btn-primary add-button"><a class="btn btn-primary btn-link" href="{{url_for('delete_product', id = product.id)}}" role="button">Delete Item</a></button>
+        <hr>
+        {% else %}
+        <button type="button" class="btn btn-primary add-button"><a class="btn btn-primary btn-link" href="{{url_for('log_in') }}" role="button">Log-in</a></button>
+        <hr>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+</head>
+</html>
